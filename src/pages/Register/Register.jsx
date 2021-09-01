@@ -15,9 +15,7 @@ function Register() {
         </div>
         <div className={classes.formPanel}>
           <Forms signUp={false} />
-          <Link to='/login' className={classes.goBack}>
-            Ortga qaytish
-          </Link>
+          
         </div>
       </div>
     </div>

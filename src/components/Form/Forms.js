@@ -1,6 +1,6 @@
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Formik,  Form } from "formik";
+import { Formik, Form } from "formik";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../UI/Button/Buttons";
@@ -26,16 +26,15 @@ export default function Forms({ signUp }) {
       .string()
       .min(8, "Parol kamida 8 ta bo'lishi kerak")
       .required("Parol kiritish shart"),
-    });
-    const [eyeIcon, setEyeIcon] = useState('off')
-    const changeEye=()=>{
-if(eyeIcon==='off'){
-  setEyeIcon('onn')
-}
-else{
-  setEyeIcon('off')
-}
+  });
+  const [eyeIcon, setEyeIcon] = useState("off");
+  const changeEye = () => {
+    if (eyeIcon === "off") {
+      setEyeIcon("onn");
+    } else {
+      setEyeIcon("off");
     }
+  };
   return (
     <div className={classes.forms}>
       <Formik
@@ -66,20 +65,23 @@ else{
                 <Input type='text' name='tel' label='Telefon raqamingiz' />
               )}
               <div className={classes.inputBox}>
-            <Input type={eyeIcon==='off'?'password':'text'} name='password' label='Parol kiriting' />
-            <FontAwesomeIcon
-          onClick={changeEye}
-          className={classes.eyeIcon}
-          icon={
-            eyeIcon === "onn"
-              ? faEye
-              : eyeIcon === "off"
-              ? faEyeSlash
-              : ""
-          }
-        />
-
-                </div>
+                <Input
+                  type={eyeIcon === "off" ? "password" : "text"}
+                  name='password'
+                  label='Parol kiriting'
+                />
+                <FontAwesomeIcon
+                  onClick={changeEye}
+                  className={classes.eyeIcon}
+                  icon={
+                    eyeIcon === "onn"
+                      ? faEye
+                      : eyeIcon === "off"
+                      ? faEyeSlash
+                      : ""
+                  }
+                />
+              </div>
 
               {signUp ? (
                 <Link className={classes.rememberMe} to='/register'>
@@ -92,8 +94,11 @@ else{
               )}
 
               <div className={classes.btnConfirmation}>
-                <Button type='submit'>{signUp?'Kirish':'Tadiqlash'}</Button>
+                <Button type='submit'>{signUp ? "Kirish" : "Tadiqlash"}</Button>
               </div>
+              <Link to='/' className={classes.goBack}>
+                Ortga qaytish
+              </Link>
             </div>
           </Form>
         )}
@@ -101,5 +106,3 @@ else{
     </div>
   );
 }
-
-

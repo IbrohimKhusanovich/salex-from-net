@@ -17,9 +17,7 @@ function Login() {
         <div className={classes.formPanel}>
 
           <Forms signUp={true} />
-          <Link to="/" className={classes.goBack}>
-            Ortga qaytish
-          </Link>
+          
         </div>
       </div>
     </div>
